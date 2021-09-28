@@ -19,6 +19,9 @@ To do so I will use [npm-snyk.js](npm-snyk.js) script:
 
 When I am on https://www.npmjs.com/package/bootstrap I open the freshly created bookmark then my brower opens https://snyk.io/advisor/npm-package/bootstrap in a new tab.
 
+## Warning
+
+As long as it points to an arbitrary url and executes code into your browser, carefulness is needed!
 
 ## License
 
