@@ -10,12 +10,15 @@ Example: When I am on [npmjs.com](https://www.npmjs.com/) I would like to check 
 
 To do so I will use [npm-snyk.js](npm-snyk.js) script: 
 - Bookmark name: **NPM - Snyk**  
-- Bookmark url: **javascript:(function(){
+- Bookmark url:
+```javascript
+javascript:(function(){
     const urlSplit = location.href.split('/');
     const packageName = urlSplit[urlSplit.length - 1].split('#')[0];
-    const snykUrl = \`https://snyk.io/advisor/npm-package/${packageName}\`;
+    const snykUrl = `https://snyk.io/advisor/npm-package/${packageName}`;
     window.open(snykUrl, '_blank');
-})();**
+})();
+```
 
 When I am on https://www.npmjs.com/package/bootstrap I open the freshly created bookmark then my brower opens https://snyk.io/advisor/npm-package/bootstrap in a new tab.
 
