@@ -20,7 +20,7 @@ javascript:(function(){
 })();
 ```
 
-When I am on https://www.npmjs.com/package/bootstrap I open the freshly created bookmark then my brower opens https://snyk.io/advisor/npm-package/bootstrap in a new tab.
+When I am on https://www.npmjs.com/package/bootstrap I open the freshly created bookmark then my browser opens https://snyk.io/advisor/npm-package/bootstrap in a new tab.
 
 ## Warning
 
