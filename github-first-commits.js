@@ -19,5 +19,5 @@ Widely inspired by @bpceee https://github.com/bpceee/oldest */
     const commitsCount = parseInt(dom.querySelector('.d-none.d-sm-inline > strong').textContent.replace(',', ''));
     const commitId = dom.querySelector('.f6.Link--secondary').getAttribute('href').split('/').pop();
     
-    location.href = `${location.origin}/${repo}/commits/${branch}?after=${commitId}+${commitsCount - 10}&branch=${branch}`;
+    location.href = `${location.origin}/${repo}/commits/${branch}?after=${commitId}+${commitsCount - 11}&branch=${branch}`;
 })(location.pathname.match(/\/([^\/]+\/[^\/]+)(?:\/(?:tree|commits|blob)\/([^\/]+))?/));
