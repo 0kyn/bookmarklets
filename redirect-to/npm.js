@@ -37,7 +37,7 @@
 
         window.open(npmPackageUrl, '_blank');
     } else {
-        const msg = 'Sorry no Github repository found.';
+        const msg = 'Sorry no NPM package found.';
         console.error(msg);
         alert(msg);
     }
