@@ -6,7 +6,7 @@ Widely inspired by @bpceee https://github.com/bpceee/oldest */
     if (typeof branch === 'undefined') {
         const repoBasePageContent = await (await fetch(repoUrlBase)).text();
         dom = new DOMParser().parseFromString(repoBasePageContent, 'text/html');
-        const mainBranch = dom.querySelector("#branch-select-menu .css-truncate-target").textContent;
+        const mainBranch = dom.querySelector('#branch-select-menu .css-truncate-target').textContent;
         branch = mainBranch;
     }
 
