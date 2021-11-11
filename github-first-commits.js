@@ -24,5 +24,5 @@ Widely inspired by @bpceee https://github.com/bpceee/oldest */
         urlCommits += `?after=${commitId}+${commitsCount - 11}&branch=${branch}`;
     }
     
-    location.href = urlCommits
+    location.href = urlCommits;
 })(location.pathname.match(/\/([^\/]+\/[^\/]+)(?:\/(?:tree|commits|blob)\/([^\/]+))?/));
