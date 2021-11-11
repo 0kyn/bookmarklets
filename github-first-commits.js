@@ -25,4 +25,4 @@ Widely inspired by @bpceee https://github.com/bpceee/oldest */
     }
     
     location.href = urlCommits;
-})(location.pathname.match(/\/([^\/]+\/[^\/]+)(?:\/(?:tree|commits|blob)\/([^\/]+))?/));
+})(location.pathname.match(/\/([^/]+\/[^/]+)(?:\/(?:tree|commits|blob)\/([^/]+))?/));
