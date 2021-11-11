@@ -1,4 +1,4 @@
-/* This script attempts to redirect you to the github repository of the current library */
+/* This script attempts to redirect you to npmjs.com package page of the current library */
 (async function(){
     const aTags = {
         'snyk.io': document.querySelectorAll('.meta > .item > a[href*="npmjs.com"]')[0],
