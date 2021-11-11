@@ -34,8 +34,7 @@
 
     if(repoLink) {
         const npmPackageUrl = await repoLink.href;
-
-        window.open(npmPackageUrl, '_blank');
+        location.href = npmPackageUrl;
     } else {
         const msg = 'Sorry no NPM package found.';
         console.error(msg);

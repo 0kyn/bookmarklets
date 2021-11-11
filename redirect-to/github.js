@@ -17,7 +17,7 @@
 
     if(repoLink) {
         const githubRepoUrl = repoLink.getAttribute('href');
-        window.open(githubRepoUrl, '_blank');
+        window.location.href = githubRepoUrl;
     } else {
         const msg = 'Sorry no Github repository found.';
         console.error(msg);
