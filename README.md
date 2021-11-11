@@ -8,7 +8,7 @@ Add a JavaScript snippet as a bookmark in your browser.
 
 Example: When I am on [npmjs.com](https://www.npmjs.com/) I would like to check "package health" in [Snyk Advisor](https://snyk.io/advisor/).
 
-To do so I will use [npm-snyk.js](npm-snyk.js) script: 
+To do so I will use [snyk.js](./npm/snyk.js) script present in `npm/snyk.js`: 
 - Bookmark name: **NPM - Snyk**  
 - Bookmark url:
 ```javascript
