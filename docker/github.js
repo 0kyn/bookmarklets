@@ -1,7 +1,7 @@
 /* Open the current dockerhub image Github repository 
 @todo? : regexp product name in github url */
 (function(){
-    const githubLinks = document.querySelectorAll('[class*="styles__productDescription"] a[href*="github.com"]');
+    const githubLinks = document.querySelectorAll('a[href*="github.com"]');
     let found = false;
     [... githubLinks].map(link => {
         const href = link.getAttribute('href');
