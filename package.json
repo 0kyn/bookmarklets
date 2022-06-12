@@ -1,0 +1,33 @@
+{
+  "name": "bookmarklets",
+  "version": "1.0.0",
+  "description": "Set of bookmarlets",
+  "main": "gen-bookmark-file.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint --ext .js .",
+    "lint:fix": "eslint --fix --ext .js .",
+    "gen": "node ./gen-bookmark-file.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0kyn/bookmarklets.git"
+  },
+  "keywords": [
+    "bookmarlet",
+    "github",
+    "npm",
+    "snyk"
+  ],
+  "author": "0kyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0kyn/bookmarklets/issues"
+  },
+  "homepage": "https://github.com/0kyn/bookmarklets#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "uglify-js": "^3.16.0"
+  }
+}
