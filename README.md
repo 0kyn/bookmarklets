@@ -24,7 +24,7 @@ javascript:(function(){
 
 When I am on https://www.npmjs.com/package/bootstrap I open the freshly created bookmark then my browser opens https://snyk.io/advisor/npm-package/bootstrap in a new tab.
 
-### Automaticaly
+### Automatically
 
 You can import all bookmarklets in your browser thanks to the import HTML file [bookmarklets-import.html](./bookmarklets-import.html).
 
