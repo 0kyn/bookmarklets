@@ -52,7 +52,7 @@ import uglify from 'uglify-js';
             <DL><p>`;
             for (const b2 of b.bookmarklets) {
                 html += `
-                <DT><A HREF="${b2.jsString}" ADD_DATE="${b2.addDate}" LAST_MODIFIED="${b2.lastModified}">${b2.name}</A>`;
+                <DT><A HREF="${b2.jsString}">${b2.name}</A>`;
             }
             html += `
             </DL><p>`;
@@ -109,8 +109,6 @@ import uglify from 'uglify-js';
                 o.bookmarklets.push({
                     name: filename,
                     jsString: bookmarkletString,
-                    addDate: msToS(fileStats.birthtimeMs),
-                    lastModified: msToS(fileStats.mtimeMs)
                 });
             });
 
