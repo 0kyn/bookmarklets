@@ -6,7 +6,7 @@ Widely inspired by @bpceee https://github.com/bpceee/oldest */
     if (typeof branch === 'undefined') {
         const repoBasePageContent = await (await fetch(repoUrlBase)).text();
         dom = new DOMParser().parseFromString(repoBasePageContent, 'text/html');
-        const mainBranch = dom.querySelector('#branch-select-menu .css-truncate-target').textContent;
+        const mainBranch = dom.querySelector('.ref-selector-button-text-container > span').textContent.trim();
         branch = mainBranch;
     }
 
@@ -16,8 +16,13 @@ Widely inspired by @bpceee https://github.com/bpceee/oldest */
         dom = new DOMParser().parseFromString(repoTreePageContent, 'text/html');
     }
 
-    const commitsCount = parseInt(dom.querySelector('.d-none.d-sm-inline > strong').textContent.replace(/,/g, ''));
-    const commitId = dom.querySelector('.f6.Link--secondary').getAttribute('href').split('/').pop();
+    const commitsCount = parseInt(
+        dom.querySelector(
+            `a[href$="commits/${branch}/"]`
+        ).textContent.replace(/,/g, '').replace(/\sCommits/ig,'')
+    );
+    
+    const commitId = dom.querySelector('[data-test-selector="spoofed-commit-check"]').getAttribute('src').split('/').pop();
 
     let urlCommits = `${location.origin}/${repo}/commits/${branch}`;
     if(commitsCount >= 10){
