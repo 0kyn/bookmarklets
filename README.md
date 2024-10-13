@@ -1,4 +1,4 @@
-# bookmarlets
+# bookmarklets
 
 This is a set of bookmarklets
 
@@ -8,7 +8,7 @@ This is a set of bookmarklets
 
 Add a JavaScript snippet as a bookmark in your browser.
 
-Example: When I am on [npmjs.com](https://www.npmjs.com/) I would like to check "package health" in [Snyk Advisor](https://snyk.io/advisor/).
+Example: Checking a [npmjs.com](https://www.npmjs.com/) package health thanks to [Snyk Advisor](https://snyk.io/advisor/) .
 
 To do so I will use [snyk.js](./npm/snyk.js) script present in `npm/snyk.js`: 
 - Bookmark name: **NPM - Snyk**  
@@ -55,10 +55,6 @@ touch stackoverflow/scroll-to-accepted-answer.js
 # generate the HTML bookmarks import file
 npm run gen
 ```
-
-## Warning
-
-As long as it points to an arbitrary url and executes code into your browser, carefulness is needed!
 
 ## License
 
