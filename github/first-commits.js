@@ -2,27 +2,21 @@
 Widely inspired by @bpceee https://github.com/bpceee/oldest */
 (async function ([_, repo, branch]) {
     const repoUrlBase = `${location.origin}/${repo}`;
-    let dom = document;
+    let content;
     if (typeof branch === 'undefined') {
-        const repoBasePageContent = await (await fetch(repoUrlBase)).text();
-        dom = new DOMParser().parseFromString(repoBasePageContent, 'text/html');
+        const repoBasePageContent = content = await (await fetch(repoUrlBase)).text();
+        const dom = new DOMParser().parseFromString(repoBasePageContent, 'text/html');
         const mainBranch = dom.querySelector('.ref-selector-button-text-container > span').textContent.trim();
         branch = mainBranch;
     }
 
     const repoUrlTree = `${repoUrlBase}/tree/${branch}`;
     if (location.href !== repoUrlTree) {
-        const repoTreePageContent = await (await fetch(repoUrlTree)).text();
-        dom = new DOMParser().parseFromString(repoTreePageContent, 'text/html');
+        content = await (await fetch(repoUrlTree)).text();
     }
 
-    const commitsCount = parseInt(
-        dom.querySelector(
-            `a[href$="commits/${branch}/"]`
-        ).textContent.replace(/,/g, '').replace(/\sCommits/ig,'')
-    );
-    
-    const commitId = dom.querySelector('[data-test-selector="spoofed-commit-check"]').getAttribute('src').split('/').pop();
+    const commitsCount = content.match(/"commitCount":"(.+?)"/)[1];
+    const commitId = content.match(/"currentOid":"(.+?)"/)[1];
 
     let urlCommits = `${location.origin}/${repo}/commits/${branch}`;
     if(commitsCount >= 10){
