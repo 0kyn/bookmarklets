@@ -1,14 +1,15 @@
 /* This script attempts to redirect you to the github repository of the current library */
 (function(){
+    const firstGithubLink = document.querySelector('a[href*="github.com"]');
     const aTags = {
-        'npmjs.com': document.querySelectorAll('a[aria-labelledby="repository"]')[0],
-        'snyk.io': document.querySelectorAll('.meta > .item > a[href*="github.com"]')[0],
-        'npmtrends.com': document.querySelectorAll('a[href*="github.com"]')[0],
-        'bundlephobia.com': document.querySelectorAll('a.quick-stats-bar__link[href*="github.com"]')[0],
+        'npmjs.com': document.querySelector('[aria-labelledby*="repository-link"]'),
+        'snyk.io': firstGithubLink,
+        'npmtrends.com': firstGithubLink,
+        'bundlephobia.com': document.querySelector('a.quick-stats-bar__link[href*="github.com"]'),
         'packagist.org': document.querySelector('.details > p.canonical > a'),
-        'pypi.org': document.querySelectorAll('.vertical-tabs__list a[href*="github.com"]')[0],
-        'rubygems.org': document.querySelectorAll('a[href*="github.com"]')[0],
-        'conan.io': document.querySelectorAll('.v-window a[href*="github.com"]')[0],
+        'pypi.org': document.querySelector('.vertical-tabs__list a[href*="github.com"]'),
+        'rubygems.org': firstGithubLink,
+        'conan.io': document.querySelector('[data-tooltip-id="package-info"][data-tooltip-html*="Git"] ~ a[href*="github.com"]'),
     };
 
     const domainSplit = document.domain.split('.');
