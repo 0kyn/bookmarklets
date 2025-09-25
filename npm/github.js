@@ -1,6 +1,6 @@
 /* Open the current npm package Github repository */
 (function(){
-    const repoLink = document.querySelectorAll('[aria-labelledby="repository"]')[0];
+    const repoLink = document.querySelector('[aria-labelledby*="repository-link"]');
     if(repoLink) {
         const githubRepoUrl = repoLink.getAttribute('href');
         window.open(githubRepoUrl, '_blank');
