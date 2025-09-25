@@ -5,7 +5,7 @@
     if (typeof branch === 'undefined') {
         const repoBasePageContent = await (await fetch(repoUrlBase)).text();
         dom = new DOMParser().parseFromString(repoBasePageContent, 'text/html');
-        const mainBranch = dom.querySelector('#branch-select-menu .css-truncate-target').textContent;
+        const mainBranch = dom.querySelector('.ref-selector-button-text-container > span').textContent.trim();
         branch = mainBranch;
     }
     const packageJsonRawUrl = `https://raw.githubusercontent.com/${repo}/${branch}/package.json`;
