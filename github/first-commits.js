@@ -15,7 +15,7 @@ Widely inspired by @bpceee https://github.com/bpceee/oldest */
         content = await (await fetch(repoUrlTree)).text();
     }
 
-    const commitsCount = content.match(/"commitCount":"(.+?)"/)[1];
+    const commitsCount = parseInt(content.match(/"commitCount":"(.+?)"/)[1].replace(/,/g, ''));
     const commitId = content.match(/"currentOid":"(.+?)"/)[1];
 
     let urlCommits = `${location.origin}/${repo}/commits/${branch}`;
